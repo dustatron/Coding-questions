@@ -1,25 +1,22 @@
 // Input: [7, 9, "hi", 12, "hi" 7, 53]
-
 // Output: [7, 9, "hi", 12, 53]
 
-const dedupe = (startingArr) => {
-    let result = [];
+const checkArray = (startingArr, index = 0, result = []) => {
+	const currentResult = [ ...result ];
 
-    const checkArray = (startingArr, index = 0) => {
-        if(index >= startingArr.length) {
-            return "";
-        }
+	//end condition
+	if (index >= startingArr.length) {
+		return currentResult;
+	}
 
-        if(result.includes(startingArr[index])) {
-            checkArray(startingArr, (index + 1));
-        } else {
-            result.push(startingArr[index]);
-            checkArray(startingArr, (index + 1));
-        }
-    }
-    checkArray(startingArr);
-    return result;
-}
+	if (currentResult.includes(startingArr[index])) {
+		return checkArray(startingArr, index + 1, result);
+	} else {
+		// result.push(startingArr[index]);
+		const newResult = [ ...result, startingArr[index] ];
+		return checkArray(startingArr, index + 1, newResult);
+	}
+};
 
-console.log("running");
-console.log(dedupe([7, 9, "hi", 12, "hi", 7, 53]));
+console.log('running');
+console.log(checkArray([ 7, 9, 'hi', 12, 'hi', 7, 53 ]));

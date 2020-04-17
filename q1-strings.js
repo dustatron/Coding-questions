@@ -7,19 +7,19 @@
 // Output: "Jasmine%20Ann%Jones"
 
 const cleanString = (urlToClear) => {
-    let result = urlToClear
-        .split("")
-        .map((letter) => {
-            if(letter === " ") {
-                return "%20";
-            } else {
-                return letter;
-            }
-        }).join("");
-        
+	let result = urlToClear
+		.split('')
+		.map((letter) => {
+			if (letter === ' ') {
+				return '%20';
+			} else {
+				return letter;
+			}
+		})
+		.join('');
 
-    return result;
-}
+	return result;
+};
 
-console.log("running");
-console.log(cleanString("Jasmine Ann Jones"));
+console.log('running');
+console.log(cleanString('Jasmine Ann Jones'));

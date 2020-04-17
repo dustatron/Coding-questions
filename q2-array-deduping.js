@@ -6,16 +6,16 @@
 // Output: [7, 9, "hi", 12, 53]
 
 const dedupe = (cleanArray) => {
-    let result = [];
+	let result = [];
 
-    cleanArray.forEach(element => {
-        if(!result.includes(element)) {
-            result.push(element);
-        }
-    });
+	cleanArray.forEach((element) => {
+		if (!result.includes(element)) {
+			result.push(element);
+		}
+	});
 
-    return result;
-}
+	return result;
+};
 
-console.log("running");
-console.log(dedupe([7, 9, "hi", 12, "hi", 7, 53]));
+console.log('running');
+console.log(dedupe([ 7, 9, 'hi', 12, 'hi', 7, 53 ]));
